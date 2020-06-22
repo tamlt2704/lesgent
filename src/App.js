@@ -7,26 +7,26 @@ import AppCanvas from './components/app/AppCanvas';
 import AppFooter from './components/app/AppFooter';
 import AppDemo01 from './components/app/AppDemo01';
 import AppDemo02 from './components/app/AppDemo02';
+import AppBanner from './components/app/AppBanner';
 
 function App() {
-  return (
-      <div className="container">
-          <AppHeader> 
-          </AppHeader>
+    return (
+        <>
+        <AppHeader> 
+        </AppHeader>
+        <div className="container-fluid">
+                <AppCanvas> </AppCanvas> 
+                <AppDemo01>
+                </AppDemo01>
 
-          <AppCanvas>
-          </AppCanvas>
-        
-          <AppDemo01>
-          </AppDemo01>
+                <AppDemo02>
+                </AppDemo02>
 
-          <AppDemo02>
-          </AppDemo02>
-
-          <AppFooter>
-          </AppFooter>
-    </div>
-  );
+                <AppFooter>
+                </AppFooter>
+            </div>
+        </>
+    );
 }
 
 export default App;

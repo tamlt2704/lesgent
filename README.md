@@ -74,3 +74,6 @@ npm install --save bootstrap
 index.js
 import 'bootstrap/dist/css/bootstrap.css'
 
+npm install jquery popper.js
+
+

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 function AppCanvas({  }) {
     const canvasRef = useRef()
-    const [canvasSize, setCanvasSize]  =  useState({width: 600, height: 400})
+    const [canvasSize, setCanvasSize]  =  useState({width: window.innerWidth, height: 600})
     const createArray = length => [...Array(length)]
-    const randomStars = createArray(50).map((c, i) => {
+    const randomStars = createArray(20).map((c, i) => {
             let x = Math.random() * canvasSize.width
             let y = Math.random() * canvasSize.height
             let radius = Math.random() * 3
@@ -83,6 +83,18 @@ function AppCanvas({  }) {
             cancelAnimationFrame(rAF)
         }
     }, [stars])
+
+    useEffect(() => {
+        function handleResize() {
+            console.log( 'onReize' )
+            setCanvasSize({width: window.innerWidth, height: 600 })
+        }
+        // window.addEventListener('resize', handleResize)
+
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    })
 
     return (
         <div className="row">
