@@ -47,13 +47,31 @@ function AppCanvas({  }) {
     const mouseOverCanvas = (e) => {
         let mouseX = e.clientX
         let mouseY = e.clientY
+        const closeStar = []
         for (let star of stars) {
             let {x, y} = star
             const xDist = mouseX - x
             const yDist = mouseY - y
-            const distanceToMose = Math.sqrt(xDist * xDist + yDist * yDist)
-            star.radius = (distanceToMose < 100) ? 3 : star.originRadius
+            const distanceToMouse = Math.sqrt(xDist * xDist + yDist * yDist)
+            star.radius = (distanceToMouse < 100) ? 3 : star.originRadius
+            if (distanceToMouse < 100) {
+                closeStar.push(star)
+            }
         }
+        const canvasObj = canvasRef.current
+        const ctx = canvasObj.getContext('2d')
+        //ctx.strokeStyle= "white"
+        for (let i = 0; i < closeStar.length; i ++) {
+            const j = Math.floor(Math.random() * closeStar.length)
+            const s1 = closeStar[i]
+            const s2 = closeStar[j]
+
+            ctx.beginPath()
+            ctx.moveTo(s1.x, s1.y)
+            ctx.lineTo(s2.x, s2.y)
+            ctx.stroke()
+        }
+
     }
 
 
