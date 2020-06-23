@@ -3,28 +3,42 @@ import logo from './logo.svg';
 import './App.css';
 
 import AppHeader from './components/app/AppHeader';
-import AppCanvas from './components/app/AppCanvas';
 import AppFooter from './components/app/AppFooter';
-import AppDemo01 from './components/app/AppDemo01';
-import AppDemo02 from './components/app/AppDemo02';
-import AppBanner from './components/app/AppBanner';
+import {
+    Home,
+    Products,
+    About,
+    News,
+    Demos,
+    Whoop404
+} from './pages/pages.js'
+import {Switch, Route, Redirect} from 'react-router-dom'
 
 function App() {
     return (
         <>
-        <AppHeader> 
-        </AppHeader>
-        <div className="container-fluid">
-                <AppCanvas> </AppCanvas> 
-                <AppDemo01>
-                </AppDemo01>
+        <AppHeader> </AppHeader>
+        <Switch>
+            <Redirect from="/demos" to="/about/demos" />
+            <Redirect from="/news" to="/about/news" />
 
-                <AppDemo02>
-                </AppDemo02>
-
-                <AppFooter>
-                </AppFooter>
-            </div>
+            <Route exact path="/" component={Home}/> 
+            <Route path="/products" component={Products}/>
+            <Route path="/about"
+                render={
+                    ({match: {url}}) => (
+                        <>
+                            <Route path={`${url}/`} component={About} exact/>
+                            <Route path={`${url}/news`} component={News} exact/>
+                            <Route path={`${url}/demos`} component={Demos} exact/>
+                        </>
+                    )
+                }
+            />
+        <Route path="*" component={Whoop404}/>
+        </Switch>
+        <AppFooter>
+        </AppFooter>
         </>
     );
 }

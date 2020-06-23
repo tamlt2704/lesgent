@@ -23,13 +23,19 @@ function AppFooter({  }) {
             </div>
             <div className="col"> 
                 <h3>
-                    About Us
+                    <a href="/about">
+                        About Us
+                    </a>
                 </h3>
                 <p>
-                    News
+                    <a href="/about/news">
+                        News
+                    </a>
                 </p>
                 <p>
-                    Contact
+                    <a href="/about/demos">
+                       Demos 
+                   </a>
                 </p>
             </div>
         </div>

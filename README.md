@@ -76,4 +76,5 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 npm install jquery popper.js
 
-
+router
+npm install react-router react-router-dom
