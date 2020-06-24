@@ -14,6 +14,10 @@ import {
 } from './pages/pages.js'
 import {Switch, Route, Redirect} from 'react-router-dom'
 
+import Admin from './pages/admin/Admin'
+import Pushup from './pages/Pushup'
+import PoseNet from './pages/PoseNet'
+
 function App() {
     return (
         <>
@@ -35,10 +39,11 @@ function App() {
                     )
                 }
             />
+            <Route exact path="/pushup" component={PoseNet}/> 
+            <Route exact path="/admin" component={Admin}/> 
         <Route path="*" component={Whoop404}/>
         </Switch>
-        <AppFooter>
-        </AppFooter>
+        <AppFooter />
         </>
     );
 }

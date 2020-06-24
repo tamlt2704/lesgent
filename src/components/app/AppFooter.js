@@ -6,39 +6,37 @@ import '../../App.css'
 
 function AppFooter({  }) {
     return (
-        <div className="row footer" style={{backgroundColor: "#f4f4f4"}}>
-            <div className="col"> 
-                <h2>
+        <>
+        <footer className="pt-4 my-md-5 pt-md-5 border-light">
+            <div className="row">
+                <div className="col-12 col-md">
                     <img src={logo} alt="" style={{width: 40, height: 40, borderRadius: 50}}/> &nbsp;
-                    Cyber Eye
-                </h2>
+                    <small className="d-block mb-3 text-muted">
+                        &copy; 2020
+                    </small>
+                </div>
+
+                <div className="col-6 col-md">
+                    <h5> Products </h5>
+                    <ul className="list-unstyled text-small">
+                        <li><a className="text-muted" href="#"> Face Recorgnisation </a></li>
+                    </ul>
+                    <ul className="list-unstyled text-small">
+                        <li><a className="text-muted" href="#"> Data Story Telling</a></li>
+                    </ul>
+                </div>
+                <div className="col-6 col-md">
+                    <h5> About Us</h5>
+                    <ul className="list-unstyled text-small">
+                        <li><a className="text-muted" href="#"> Contact </a></li>
+                    </ul>
+                    <ul className="list-unstyled text-small">
+                        <li><a className="text-muted" href="#"> Demo </a></li>
+                    </ul>
+                </div>
             </div>
-            <div className="col"> 
-                <h3>
-                    Products 
-                </h3>
-                <p>
-                    Face Recognition
-                </p>
-            </div>
-            <div className="col"> 
-                <h3>
-                    <a href="/about">
-                        About Us
-                    </a>
-                </h3>
-                <p>
-                    <a href="/about/news">
-                        News
-                    </a>
-                </p>
-                <p>
-                    <a href="/about/demos">
-                       Demos 
-                   </a>
-                </p>
-            </div>
-        </div>
+        </footer>
+		</>
     );
 }
 

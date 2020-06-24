@@ -37,10 +37,19 @@
   }
 }
 
-
 .footer {
-    position: fixed;
-    height: 100px;
-    bottom: 0;
-    width: 100%;
+	padding-top: 50px
+}
+
+#videoNoShow {
+    transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    display: none !important;
+}
+
+
+h4 {
+    color: #007aFF;
 }

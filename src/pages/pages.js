@@ -6,22 +6,20 @@ import AppDemo02 from '../components/app/AppDemo02';
 
 export function Home() {
     return (
-        <div className="container-fluid">
-                <AppCanvas> </AppCanvas> 
+        <>
+        <AppCanvas> </AppCanvas> 
+        <div className="container">
                 <AppDemo01>
                 </AppDemo01>
-
-                <AppDemo02>
-                </AppDemo02>
-
         </div>
+		</>
     )
 }
 
 
 export function About() {
     return (
-        <div>
+        <div className="container">
             <h1>
                 [About]
             </h1>
@@ -31,7 +29,7 @@ export function About() {
 
 export function Products() {
     return (
-        <div>
+        <div className="container">
             <h1>
                 [Products]
             </h1>
@@ -42,7 +40,7 @@ export function Products() {
 
 export function News() {
     return (
-        <div>
+        <div className="container">
             <h1>
                 [News]
             </h1>
@@ -52,21 +50,18 @@ export function News() {
 
 export function Demos() {
     return (
-        <div>
-            <h1>
-                [Demo]
-            </h1>
-        </div>
+        <>
+	
+        </>
     )
 }
 
 export function Whoop404() {
     return (
-        <div>
+        <div className="container">
             <h1>
                 [Whoop404]
             </h1>
         </div>
     )
 }
-
